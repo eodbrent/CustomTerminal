@@ -13,8 +13,7 @@ class ConPTYManager : public QObject {
 
 public:
     explicit ConPTYManager(QObject *parent = nullptr);
-    ~ConPTYManager();
-
+    virtual ~ConPTYManager();
     bool startShell();                        // Start a shell session
     void writeToShell(const QString &input);  // Send user input
     void resizeShell(int width, int height);  // Resize terminal
@@ -31,8 +30,5 @@ private:
 
     void readShellOutput();  // process shell output
 };
-ConPTYManager::~ConPTYManager() {
-    // Clean up resources, if any
-}
 
 #endif // CONPTYMANAGER_H
